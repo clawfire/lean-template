@@ -69,4 +69,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 img {
   max-width: 100%; }
 
+footer .ui.container .ui.grid {
+  width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

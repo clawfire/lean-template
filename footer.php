@@ -5,19 +5,23 @@
  * Contains the closing of the #content div and all content after.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package continuous
  */
-
 ?>
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'continuous' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'continuous' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'continuous' ), 'continuous', '<a href="http://thibaultmilan.com" rel="designer">Thibault Milan</a>' ); ?>
+
+	<footer class="ui inverted vertical footer segment" role="contentinfo">
+		<div class="ui container">
+			<div class="ui stackable inverted divided equal height stackable three columns grid">
+				<div class="column">
+					<a href="<?php echo esc_url(__('https://wordpress.org/', 'continuous')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'continuous'), 'WordPress'); ?></a>
+					<span class="sep"> | </span>
+					<?php printf(esc_html__('Theme: %1$s by %2$s.', 'continuous'), 'lean', '<a href="http://thibaultmilan.com" rel="designer">Thibault Milan</a>'); ?>
+				</div>
+				<?php dynamic_sidebar('footer-1'); ?>
+				<?php dynamic_sidebar('footer-2'); ?>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
