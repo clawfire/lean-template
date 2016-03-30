@@ -192,7 +192,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post. 
+#. translators: %s: Name of current post.
 #: template-parts/content.php:33
 #, php-format
 #@ _s
