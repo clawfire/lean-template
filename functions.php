@@ -135,15 +135,29 @@ function continuous_scripts()
 {
     wp_enqueue_style('continuous-style', get_stylesheet_uri());
 
-    wp_enqueue_script('continuous-navigation', get_template_directory_uri().'/js/navigation.js', array(), '20151215', true);
+    wp_enqueue_script('continuous-navigation', get_template_directory_uri().'/js/navigation.js', array('dropdown'), '20151215', true);
 
     wp_enqueue_script('continuous-skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+
+    wp_enqueue_script('dropdown', get_template_directory_uri().'/styles/semantic-ui/components/dropdown.min.js', array('jquery', 'transition'), '', true);
+    wp_enqueue_script('transition', get_template_directory_uri().'/styles/semantic-ui/components/transition.min.js', array('jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'continuous_scripts');
+
+/**
+ * Add the class .item to the <li> tags in a menu.
+ */
+function add_class_on_li($classes, $item, $args)
+{
+    $classes[] = 'item';
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_class_on_li', 1, 3);
 
 /**
  * Implement the Custom Header feature.
