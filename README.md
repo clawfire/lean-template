@@ -30,17 +30,19 @@ You can create [button links as made in Semantic UI](http://semantic-ui.com/elem
 
 ### Grid
 
-### Create a new row
+#### Create a new row
 
 Row can contain two or more columns and column will adjust at equal width:
 
 `[row]content here event other shortcode[/row]`
 
-### Create a new column
+#### Create a new column
 
 `[column]content event shortcode[/column]`
 
-### Example of a 3 column grid
+#### Example of a 3 column grid
+
+Be carefull, as we know, WordPress add automaticly `<p></p>` tags at any new line. To prevent any misrendering, carefully use the shortcodes.
 
 ```
 [row][column]Professor, make a woman out of me. A true inspiration for the children. There's no part of that sentence I didn't like! Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
