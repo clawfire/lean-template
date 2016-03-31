@@ -142,7 +142,8 @@ add_action('widgets_init', 'continuous_widgets_init');
  */
 function continuous_scripts()
 {
-    wp_enqueue_style('continuous-style', get_stylesheet_uri());
+    wp_enqueue_style('continuous-style', get_stylesheet_uri(), array('open-sans-font'));
+    wp_enqueue_style('open-sans-font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700');
 
     wp_enqueue_script('continuous-navigation', get_template_directory_uri().'/js/navigation.js', array('dropdown'), '20151215', true);
 
