@@ -37,7 +37,6 @@
         'items_wrap' => '%3$s',
     )); ?>
 
-<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('Skip to content', 'continuous'); ?></a>
 <div id="page" class="pusher">
 	<?php if (!is_front_page() && !is_home()) : ?>
 		<header id="masthead" class="ui container" role="banner">
