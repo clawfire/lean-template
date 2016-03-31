@@ -27,3 +27,15 @@ You can create [button links as made in Semantic UI](http://semantic-ui.com/elem
 `[button href="http://google.com" title="Discover our service" color="blue" size="medium"]See more[/button]`
 
 [Size](http://semantic-ui.com/elements/button.html#size) and [color](http://semantic-ui.com/elements/button.html#colored) can be customized.
+
+### Grid
+
+### Create a new row
+
+Row can contain two or more columns and column will adjust at equal width:
+
+`[row]content here event other shortcode[/row]`
+
+### Create a new column
+
+`[column]content event shortcode[/column]`

@@ -285,12 +285,6 @@ add_shortcode('button', 'button');
  */
 function row($atts, $content = null)
 {
-    extract(shortcode_atts(
-        array(
-            'count' => 'two',
-        ), $atts)
-    );
-
     return '<div class="ui equal width stackable grid">'.do_shortcode($content).'</div>';
 }
 add_shortcode('row', 'row');
