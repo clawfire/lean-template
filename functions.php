@@ -171,6 +171,77 @@ function add_class_on_li($classes, $item, $args)
 add_filter('nav_menu_css_class', 'add_class_on_li', 1, 3);
 
 /**
+ * Limit the number of post returned in the main WP loop in the homepage.
+ *
+ * @param object $query the original WP query
+ */
+function one_posts_on_homepage($query)
+{
+    if ($query->is_home() && $query->is_main_query()) {
+        $query->set('posts_per_page', 1);
+    }
+}
+add_action('pre_get_posts', 'one_posts_on_homepage');
+
+/*
+* Register Custom Post Type Quotes.
+*/
+if (!function_exists('custom_post_type_quotes')) {
+    function custom_post_type_quotes()
+    {
+        $labels = array(
+            'name' => _x('Quotes', 'Post Type General Name', 'continuous'),
+            'singular_name' => _x('Quote', 'Post Type Singular Name', 'continuous'),
+            'menu_name' => __('Quotes', 'continuous'),
+            'name_admin_bar' => __('Post Type', 'continuous'),
+            'archives' => __('Quote Archives', 'continuous'),
+            'parent_item_colon' => __('Parent Quote:', 'continuous'),
+            'all_items' => __('All Quotes', 'continuous'),
+            'add_new_item' => __('Add New Quote', 'continuous'),
+            'add_new' => __('Add New', 'continuous'),
+            'new_item' => __('New Quote', 'continuous'),
+            'edit_item' => __('Edit Quote', 'continuous'),
+            'update_item' => __('Update Quote', 'continuous'),
+            'view_item' => __('View Quote', 'continuous'),
+            'search_items' => __('Search Quote', 'continuous'),
+            'not_found' => __('Not found', 'continuous'),
+            'not_found_in_trash' => __('Not found in Trash', 'continuous'),
+            'featured_image' => __('Featured Image', 'continuous'),
+            'set_featured_image' => __('Set featured image', 'continuous'),
+            'remove_featured_image' => __('Remove featured image', 'continuous'),
+            'use_featured_image' => __('Use as featured image', 'continuous'),
+            'insert_into_item' => __('Insert into quote', 'continuous'),
+            'uploaded_to_this_item' => __('Uploaded to this quote', 'continuous'),
+            'items_list' => __('Quotes list', 'continuous'),
+            'items_list_navigation' => __('Quotes list navigation', 'continuous'),
+            'filter_items_list' => __('Filter quotes list', 'continuous'),
+        );
+        $args = array(
+            'label' => __('Quote', 'continuous'),
+            'description' => __('A quote from a client', 'continuous'),
+            'labels' => $labels,
+            'supports' => array('title', 'custom-fields'),
+            'hierarchical' => false,
+            'public' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-format-quote',
+            'show_in_admin_bar' => true,
+            'show_in_nav_menus' => true,
+            'can_export' => true,
+            'has_archive' => true,
+            'exclude_from_search' => true,
+            'publicly_queryable' => false,
+            'rewrite' => false,
+            'capability_type' => 'page',
+        );
+        register_post_type('quote', $args);
+    }
+    add_action('init', 'custom_post_type_quotes', 0);
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory().'/inc/custom-header.php';
