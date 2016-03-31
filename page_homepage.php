@@ -1,11 +1,13 @@
 <?php
-/**
- * Home page template file.
- *
- * It take the lead on index.php and override it.
- *
- * @author Thibault Milan <hello@thibaultmilan.com>
- */
+/* Template Name: Homepage */
+
+ /**
+  * Home page template file.
+  *
+  * It take the lead on index.php and override it.
+  *
+  * @author Thibault Milan <hello@thibaultmilan.com>
+  */
  get_header(); ?>
 <div class="ui inverted vertical masthead center aligned segment">
 
@@ -22,11 +24,7 @@
     </div>
 
     <div class="ui text container">
-        <h1 class="ui inverted header">
-            Imagine-a-Company
-        </h1>
-        <h2>Do whatever you want when you want to.</h2>
-        <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+        <?php the_post(); the_content();?>
     </div>
 
 </div>
@@ -86,9 +84,15 @@
 <div class="ui vertical stripe segment">
     <div class="ui text container">
         <?php
-            if (have_posts()) :
+            $posts = new WP_Query(
+                array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 1,
+                )
+            );
+            if ($posts->have_posts()) :
                 /* Start the Loop */
-                while (have_posts()) : the_post();
+                while ($posts->have_posts()) : $posts->the_post();
 
                 the_title('<h3 class="ui header">', '</h3>');
                 the_excerpt();?>
