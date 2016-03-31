@@ -72,6 +72,9 @@ img {
 footer .ui.container .ui.grid {
   width: 100%; }
 
+footer .credits {
+  font-size: 12px; }
+
 .hidden.menu {
   display: none; }
 

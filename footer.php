@@ -16,9 +16,11 @@
 			<div class="ui stackable inverted divided equal height stackable three columns grid">
 				<div class="column">
 					<?php dynamic_sidebar('footer-1'); ?>
-					<?php printf(esc_html__('Made with', 'continuous')); ?> <i class="red heart icon"></i> &amp; <a href="<?php echo esc_url(__('https://wordpress.org/', 'continuous')); ?>"><i class="wordpress icon"></i></a>
-					<span class="sep"> | </span>
-					<?php printf(esc_html__('Theme: %1$s by %2$s.', 'continuous'), 'lean', '<a href="http://thibaultmilan.com" rel="designer">Thibault Milan</a>'); ?>
+					<div class="credits">
+						<?php printf(esc_html__('Made with', 'continuous')); ?> <i class="red heart icon"></i> &amp; <a href="<?php echo esc_url(__('https://wordpress.org/', 'continuous')); ?>"><i class="wordpress icon"></i></a>
+						<span class="sep"> | </span>
+						<?php printf(esc_html__('Theme: %1$s by %2$s.', 'continuous'), 'lean', '<a href="http://thibaultmilan.com" rel="designer">Thibault Milan</a>'); ?>
+					</div>
 				</div>
 				<?php dynamic_sidebar('footer-2'); ?>
 				<?php dynamic_sidebar('footer-3'); ?>
