@@ -243,6 +243,26 @@ if (!function_exists('custom_post_type_quotes')) {
 }
 
 /**
+ * Add icon shortcut.
+ */
+function icon($atts)
+{
+
+    // Attributes
+    extract(shortcode_atts(
+        array(
+            'color' => 'black',
+            'icon' => '',
+            'size' => 'medium',
+        ), $atts)
+    );
+
+    // Code
+    return '<i class="$color $size $icon icon"></i>';
+}
+add_shortcode('icon', 'icon');
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory().'/inc/custom-header.php';
