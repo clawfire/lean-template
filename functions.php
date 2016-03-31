@@ -258,9 +258,27 @@ function icon($atts)
     );
 
     // Code
-    return '<i class="$color $size $icon icon"></i>';
+    return '<i class="'.implode(' ', [$color, $icon, $size]).' icon"></i>';
 }
 add_shortcode('icon', 'icon');
+
+/**
+ * Add button shortcut.
+ */
+function button($atts, $content = null)
+{
+    extract(shortcode_atts(
+        array(
+            'href' => '',
+            'title' => '',
+            'color' => '',
+            'size' => '',
+        ), $atts)
+    );
+
+    return '<a href="'.$href.'" title="'.$title.'" class="ui '.implode(' ', [$color, $size]).' button">'.$content.'</a>';
+}
+add_shortcode('button', 'button');
 
 /**
  * Implement the Custom Header feature.

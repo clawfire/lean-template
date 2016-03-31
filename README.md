@@ -18,4 +18,12 @@ You can use [all the icons provides by Semantic UI](http://semantic-ui.com/eleme
 
 `[icon color="red" icon="heart" size="medium"]`
 
-You wil get a red medium sized heart icon. See the [size](http://semantic-ui.com/elements/icon.html#size), [colo](http://semantic-ui.com/elements/icon.html#color) attributes
+You wil get a red medium sized heart icon. See the [size](http://semantic-ui.com/elements/icon.html#size), [color](http://semantic-ui.com/elements/icon.html#colored) attributes
+
+### Buttons
+
+You can create [button links as made in Semantic UI](http://semantic-ui.com/elements/button.html) with this shortcut syntax :
+
+`[button href="http://google.com" title="Discover our service" color="blue" size="medium"]See more[/button]`
+
+[Size](http://semantic-ui.com/elements/button.html#size) and [color](http://semantic-ui.com/elements/button.html#colored) can be customized.
