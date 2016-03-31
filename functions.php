@@ -281,6 +281,30 @@ function button($atts, $content = null)
 add_shortcode('button', 'button');
 
 /**
+ * Add row shortcut.
+ */
+function row($atts, $content = null)
+{
+    extract(shortcode_atts(
+        array(
+            'count' => 'two',
+        ), $atts)
+    );
+
+    return '<div class="ui equal width stackable grid">'.do_shortcode($content).'</div>';
+}
+add_shortcode('row', 'row');
+
+/**
+ * Add column shortcut.
+ */
+function column($atts, $content = null)
+{
+    return '<div class="column">'.do_shortcode($content).'</div>';
+}
+add_shortcode('column', 'column');
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory().'/inc/custom-header.php';

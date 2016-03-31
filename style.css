@@ -81,18 +81,13 @@ footer .credits {
 .masthead.segment {
   min-height: 700px;
   padding: 1em 0; }
-.masthead .logo.item img {
-  margin-right: 1em; }
-.masthead .ui.menu .ui.button {
-  margin-left: .5em; }
-.masthead h1.ui.header {
-  margin-top: 3em;
-  margin-bottom: 0;
+.masthead img {
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 4em;
   font-weight: normal; }
-.masthead h2 {
-  font-size: 1.7em;
-  font-weight: normal; }
+.masthead .container + .container {
+  margin-bottom: 3em; }
 
 .ui.vertical.stripe {
   padding: 8em 0; }

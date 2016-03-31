@@ -22,8 +22,7 @@
             <a class="item">Careers</a>
         </div>
     </div>
-
-    <div class="ui text container">
+    <div class="ui container">
         <?php the_post(); the_content();?>
     </div>
 
