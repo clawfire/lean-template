@@ -4,6 +4,17 @@ Lean is a wordpress theme developped for [Continuous](http://continuousphp.com),
 
 
 
+## Quotes / Testimonial
+
+There's a dedicated post type for this. You'll find it just under post on the sidebar.
+
+The title is the quote itself. After that you can add theses metadata as `custom fields` :
+
+- `quote_author` : the author of the quote
+- `quote_author_position` : the position of the author
+
+Those are optionals but highly recommanded
+
 ## Style
 
 ### Buttons as links
