@@ -32,6 +32,8 @@
 $children = new WP_Query(array(
     'post_parent' => get_the_ID(),
     'post_type' => 'page',
+    'orderby' => 'menu_order',
+    'order' => 'asc',
 ));
 if ($children->have_posts()):
 
@@ -56,6 +58,7 @@ endif;
                     array(
                         'post_type' => 'quote',
                         'posts_per_page' => 2,
+                        'orderby' => 'rand',
                     )
                 );
                 if ($quotes->have_posts()):
