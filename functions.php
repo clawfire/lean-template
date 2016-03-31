@@ -108,8 +108,17 @@ function continuous_widgets_init()
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'name' => esc_html__('Footer : center', 'continuous'),
+        'name' => esc_html__('Footer : left', 'continuous'),
         'id' => 'footer-1',
+        'description' => esc_html__('Add widgets here.', 'continuous'),
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="ui inverted header">',
+        'after_title' => '</h4>',
+    ));
+    register_sidebar(array(
+        'name' => esc_html__('Footer : center', 'continuous'),
+        'id' => 'footer-2',
         'description' => esc_html__('Add widgets here.', 'continuous'),
         'before_widget' => '<div id="%1$s" class="column %2$s">',
         'after_widget' => '</div>',
@@ -118,7 +127,7 @@ function continuous_widgets_init()
     ));
     register_sidebar(array(
         'name' => esc_html__('Footer : right', 'continuous'),
-        'id' => 'footer-2',
+        'id' => 'footer-3',
         'description' => esc_html__('Add widgets here.', 'continuous'),
         'before_widget' => '<div id="%1$s" class="column %2$s">',
         'after_widget' => '</div>',

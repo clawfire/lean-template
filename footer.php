@@ -15,12 +15,13 @@
 		<div class="ui container">
 			<div class="ui stackable inverted divided equal height stackable three columns grid">
 				<div class="column">
-					<a href="<?php echo esc_url(__('https://wordpress.org/', 'continuous')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'continuous'), 'WordPress'); ?></a>
+					<?php dynamic_sidebar('footer-1'); ?>
+					<?php printf(esc_html__('Made with', 'continuous')); ?> <i class="red heart icon"></i> &amp; <a href="<?php echo esc_url(__('https://wordpress.org/', 'continuous')); ?>"><i class="wordpress icon"></i></a>
 					<span class="sep"> | </span>
 					<?php printf(esc_html__('Theme: %1$s by %2$s.', 'continuous'), 'lean', '<a href="http://thibaultmilan.com" rel="designer">Thibault Milan</a>'); ?>
 				</div>
-				<?php dynamic_sidebar('footer-1'); ?>
 				<?php dynamic_sidebar('footer-2'); ?>
+				<?php dynamic_sidebar('footer-3'); ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
