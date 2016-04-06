@@ -138,4 +138,9 @@ footer .credits {
 #page .entry-content {
   padding-top: 2em; }
 
+.menu {
+  overflow: hidden; }
+  .menu .container {
+    overflow: hidden; }
+
 /*# sourceMappingURL=style.css.map */
