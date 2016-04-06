@@ -299,6 +299,22 @@ function column($atts, $content = null)
 add_shortcode('column', 'column');
 
 /**
+ * Return the menu items_list.
+ *
+ * @param string $menu_name Menu name (ex: primary-menu)
+ *
+ * @return array Menu items
+ */
+function lean_get_menu_items($menu_name)
+{
+    if (($locations = get_nav_menu_locations()) && isset($locations[ $menu_name ])) {
+        $menu = wp_get_nav_menu_object($locations[ $menu_name ]);
+
+        return wp_get_nav_menu_items($menu->term_id);
+    }
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory().'/inc/custom-header.php';

@@ -8,7 +8,7 @@
   *
   * @author Thibault Milan <hello@thibaultmilan.com>
   */
- get_header(); ?>
+ get_header();?>
 <div class="ui inverted vertical masthead center aligned segment">
 
     <div class="ui container">
@@ -16,10 +16,11 @@
             <a class="toc item">
                 <i class="sidebar icon"></i>
             </a>
-            <a class="active item">Home</a>
-            <a class="item">Work</a>
-            <a class="item">Company</a>
-            <a class="item">Careers</a>
+            <?php foreach (lean_get_menu_items('primary') as $item):?>
+            <a class=" item<?php if ($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] == $item->url) {
+    echo ' active';
+}?>" href="<?= esc_html__($item->url); ?>"><?= esc_html__($item->title);?></a>
+            <?php endforeach;?>
         </div>
     </div>
     <div class="ui container">
