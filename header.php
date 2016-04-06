@@ -38,20 +38,4 @@
     )); ?>
 
 <div id="page" class="pusher">
-	<?php if (!is_front_page() && !is_home()) : ?>
-		<header id="masthead" class="ui container" role="banner">
-			<h2 class="ui center aligned icon header">
-				<img src="<?= get_header_image() ?>" alt="<?php bloginfo('name')?>" class="ui small image" />
-				<div class="content">
-					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-						<?php bloginfo('name');?>
-					</a>
-					<?php
-                    $description = get_bloginfo('description', 'display');
-                    if ($description || is_customize_preview()) : ?>
-					<div class="sub header"><?= $description; /* WPCS: xss ok. */ ?></div>
-				<?php endif; ?>
-				</div>
-			</h2>
-		</header>
-	<?php endif; ?>
+	
