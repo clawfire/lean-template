@@ -133,5 +133,9 @@ footer .credits {
   .masthead h2 {
     margin-top: .5em;
     font-size: 1.5em; } }
+#page main {
+  padding-top: 3em; }
+#page .entry-content {
+  padding-top: 2em; }
 
 /*# sourceMappingURL=style.css.map */
