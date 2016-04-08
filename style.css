@@ -78,6 +78,9 @@ footer .credits {
 .hidden.menu {
   display: none; }
 
+.ui.secondary.pointing.menu .item.site-logo-link {
+  padding: 0; }
+
 .masthead.segment {
   min-height: 700px;
   padding: 1em 0; }

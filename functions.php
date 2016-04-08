@@ -57,14 +57,14 @@ function continuous_setup()
         'caption',
     ));
 
-    /**
+    /*
      * Add the support for Jetpack Site Logo plugin. First will create a new
      * size for the picture and then declare the theme support with this size.
      */
-    add_image_size( 'lean-logo', 80, 128 );
-    add_theme_support( 'site-logo', array(
+    add_image_size('lean-logo', 128, 80, array('center', 'center'));
+    add_theme_support('site-logo', array(
          'size' => 'lean-logo',
-     ) );
+     ));
 
     /*
      * Enable support for Post Formats.
@@ -322,6 +322,43 @@ function lean_get_menu_items($menu_name)
         return wp_get_nav_menu_items($menu->term_id);
     }
 }
+
+function lean_jetpack_the_site_logo()
+{
+    $logo = site_logo()->logo;
+    $size = site_logo()->theme_size();
+    $html = '';
+
+    // If no logo is set, but we're in the Customizer, leave a placeholder (needed for the live preview).
+    if (!jetpack_has_site_logo()) {
+        if (jetpack_is_customize_preview()) {
+            $html = sprintf('<a href="%1$s" class="site-logo-link item" style="display:none;"><img class="site-logo" data-size="%2$s" /></a>',
+                esc_url(home_url('/')),
+                esc_attr($size)
+            );
+        }
+    }
+
+    // We have a logo. Logo is go.
+    else {
+        $html = sprintf('<a href="%1$s" class="site-logo-link item" rel="home" itemprop="url">%2$s</a>',
+            esc_url(home_url('/')),
+            wp_get_attachment_image(
+                $logo['id'],
+                $size,
+                false,
+                array(
+                    'class' => "site-logo attachment-$size",
+                    'data-size' => $size,
+                    'itemprop' => 'logo',
+                )
+            )
+        );
+    }
+
+    return $html;
+}
+add_filter('jetpack_the_site_logo', 'lean_jetpack_the_site_logo', $priority = 10, $accepted_args = 0);
 
 /**
  * Implement the Custom Header feature.

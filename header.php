@@ -45,6 +45,9 @@
 	            <a class="toc item">
 	                <i class="sidebar icon"></i>
 	            </a>
+				<?php if (function_exists('jetpack_the_site_logo')) {
+    jetpack_the_site_logo();
+} ?>
 	            <?php foreach (lean_get_menu_items('primary') as $item):?>
 	            <a class=" item<?php if ($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] == $item->url) {
     echo ' active';
