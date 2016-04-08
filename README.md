@@ -21,6 +21,10 @@ Those are optionals but highly recommanded
 
 You can add the classes `ui button` to any link in your editor to get a button style. See [more styling options](http://semantic-ui.com/elements/button.html) for the buttons.
 
+### Logo in the menu
+
+Launch the customizer of the theme and add a site logo (!= site favicon). You will be asked to crop to 128x80 or same ratio. 
+
 ## Shortcodes
 
 ### Icon
