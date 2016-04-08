@@ -137,6 +137,8 @@ footer .credits {
   padding-top: 3em; }
 #page .entry-content {
   padding-top: 2em; }
+#page .entry-footer {
+  padding-bottom: 3em; }
 
 .menu {
   overflow: hidden; }

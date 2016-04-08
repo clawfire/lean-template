@@ -23,10 +23,12 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+		<?php if ( current_user_can( 'edit_pages' )) :?>
 		<a href="<?= get_edit_post_link() ?>" title="Edit <?php the_title()?>" class="ui blue mini right floated button"><?php printf(
             /* translators: %s: Name of current post */
             esc_html__('Edit %s', 'continuous'),
             the_title('', '', false)
         ) ?></a>
+		<?php endif;?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
