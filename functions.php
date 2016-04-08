@@ -57,6 +57,15 @@ function continuous_setup()
         'caption',
     ));
 
+    /**
+     * Add the support for Jetpack Site Logo plugin. First will create a new
+     * size for the picture and then declare the theme support with this size.
+     */
+    add_image_size( 'lean-logo', 80, 128 );
+    add_theme_support( 'site-logo', array(
+         'size' => 'lean-logo',
+     ) );
+
     /*
      * Enable support for Post Formats.
      * See https://developer.wordpress.org/themes/functionality/post-formats/
